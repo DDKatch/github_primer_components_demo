@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "primer_view_components", "~> 0.8.0"
+
+gem "sassc-rails", "~> 2.1"
