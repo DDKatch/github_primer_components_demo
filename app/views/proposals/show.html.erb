@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @proposal %>
+
+<div>
+  <%= link_to "Edit this proposal", edit_proposal_path(@proposal) %> |
+  <%= link_to "Back to proposals", proposals_path %>
+
+  <%= button_to "Destroy this proposal", @proposal, method: :delete %>
+</div>

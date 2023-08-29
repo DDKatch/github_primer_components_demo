@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Proposals</h1>
+
+<div id="proposals">
+  <% @proposals.each do |proposal| %>
+    <%= render proposal %>
+    <p>
+      <%= link_to "Show this proposal", proposal %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New proposal", new_proposal_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source: MyString
+  destination: MyString
+  source_loading_date: 2023-08-29 19:21:37
+  destination_unloading_date: 2023-08-29 19:21:37
+
+two:
+  source: MyString
+  destination: MyString
+  source_loading_date: 2023-08-29 19:21:37
+  destination_unloading_date: 2023-08-29 19:21:37
