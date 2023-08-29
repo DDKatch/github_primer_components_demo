@@ -127,6 +127,12 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
+    octicons (19.6.0)
+    primer_view_components (0.8.0)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
+      octicons (>= 18.0.0)
+      view_component (>= 3.1, < 4.0)
     public_suffix (5.0.3)
     puma (5.6.7)
       nio4r (~> 2.0)
@@ -190,6 +196,10 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    view_component (3.5.0)
+      activesupport (>= 5.2.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -216,6 +226,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  primer_view_components (~> 0.8.0)
   puma (~> 5.0)
   rails (~> 7.0.7)
   selenium-webdriver
