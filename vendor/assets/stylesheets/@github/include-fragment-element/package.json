@@ -1,0 +1,50 @@
+{
+  "name": "@github/include-fragment-element",
+  "version": "6.3.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": "github/include-fragment-element",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./define": "./dist/index.js",
+    "./include-fragment": "./dist/include-fragment-element.js",
+    "./include-fragment/define": "./dist/include-fragment-element-define.js"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "eslint . --ext .js,.ts && tsc --noEmit",
+    "lint:fix": "eslint --fix . --ext .js,.ts",
+    "prebuild": "npm run clean && npm run lint && mkdir dist",
+    "bundle": "esbuild --bundle dist/index.js --keep-names --outfile=dist/bundle.js --format=esm",
+    "build": "tsc && npm run bundle && npm  run manifest",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run build",
+    "test": "web-test-runner",
+    "postpublish": "npm publish --ignore-scripts --@github:registry='https://npm.pkg.github.com'",
+    "manifest": "custom-elements-manifest analyze"
+  },
+  "prettier": "@github/prettier-config",
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.8.3",
+    "@github/prettier-config": "^0.0.6",
+    "@open-wc/testing": "^3.1.8",
+    "@web/dev-server-esbuild": "^0.4.1",
+    "@web/test-runner": "^0.16.1",
+    "@web/test-runner-playwright": "^0.10.1",
+    "esbuild": "^0.17.19",
+    "eslint": "^8.42.0",
+    "eslint-plugin-custom-elements": "^0.0.8",
+    "eslint-plugin-github": "^4.8.0",
+    "typescript": "^5.1.3"
+  },
+  "customElements": "custom-elements.json",
+  "eslintIgnore": [
+    "dist/"
+  ]
+}

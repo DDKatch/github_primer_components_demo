@@ -1,0 +1,8 @@
+{
+  "name": "alpha/overlay",
+  "selectors": [
+    "anchored-position[popover]",
+    ".Overlay",
+    "anchored-position[popover]:not(.\\:popover-open)"
+  ]
+}

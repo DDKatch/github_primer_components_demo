@@ -1,0 +1,11 @@
+/**
+ * Do not edit directly
+ * Generated on Mon, 14 Aug 2023 17:34:59 GMT
+ */
+
+
+    @media (pointer: coarse) { :root {
+  --primer-controlStack-medium-gap-auto: var(--base-size-12);
+  --primer-controlStack-small-gap-auto: var(--base-size-16);
+  --primer-control-minTarget-auto: var(--base-size-44);
+}}

@@ -1,0 +1,111 @@
+{
+  "name": "@primer/css",
+  "version": "21.0.8",
+  "description": "The CSS implementation of GitHub's Primer Design System",
+  "homepage": "https://primer.style/css",
+  "author": "GitHub, Inc.",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT",
+  "style": "dist/primer.css",
+  "sass": "index.scss",
+  "type": "module",
+  "main": "dist/primer.js",
+  "repository": "https://github.com/primer/css",
+  "bugs": {
+    "url": "https://github.com/primer/css/issues"
+  },
+  "keywords": [
+    "primer",
+    "css",
+    "github",
+    "design-system"
+  ],
+  "scripts": {
+    "build:docs": "script/build-docs",
+    "build:docs:preview": "script/build-docs preview",
+    "build:css": "script/build-css.js",
+    "dist": "script/dist.js",
+    "dist:watch": "chokidar \"src/**/*.scss\" -c \"script/dist.js\"",
+    "stylelint": "stylelint --quiet --rd 'src/**/*.scss'",
+    "stylelint:fix": "npm run stylelint -- --fix",
+    "stylelint:remove-disables": "script/stylelint-remove-disables.js 'src/**/*.scss'",
+    "stylelint:add-disables": "script/stylelint-add-disables.js 'src/**/*.scss'",
+    "eslint": "eslint deprecations.js __tests__ script",
+    "prepublishOnly": "script/prepublish",
+    "start": "npm run dev",
+    "pretest": "npm run dist && script/pretest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "release": "changeset publish",
+    "storybook": "cd docs && npm i && npx storybook build",
+    "build:storybook": "cd docs && npm i && npm run build:storybook"
+  },
+  "dependencies": {
+    "@primer/primitives": "^7.12.0",
+    "@primer/view-components": "^0.5.1"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.1",
+    "@csstools/postcss-sass": "^5.0.1",
+    "@github/prettier-config": "^0.0.6",
+    "@primer/stylelint-config": "^12.8.0",
+    "autoprefixer": "^10.4.13",
+    "chokidar-cli": "^3.0.0",
+    "cssstats": "^4.0.5",
+    "eslint": "^8.37.0",
+    "eslint-plugin-github": "^4.6.0",
+    "eslint-plugin-jest": "^27.2.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "filesize": "^10.0.5",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.1.0",
+    "globby": "^13.1.4",
+    "jest": "^29.5.0",
+    "js-yaml": "^4.1.0",
+    "postcss": "^8.4.5",
+    "postcss-calc": "^8.2.4",
+    "postcss-custom-properties-fallback": "^1.0.2",
+    "postcss-import": "^15.0.0",
+    "postcss-load-config": "^4.0.1",
+    "postcss-scss": "^4.0.5",
+    "postcss-simple-vars": "^7.0.1",
+    "prettier": "^2.8.8",
+    "semver": "^7.3.8",
+    "stylelint": "^15.7.0",
+    "table": "^6.8.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/utils/",
+      "/__tests__/docs.test.js"
+    ],
+    "transform": {}
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 4 Firefox versions",
+    "last 3 Safari versions",
+    "not Safari 12",
+    "last 4 Edge versions",
+    "not Edge <= 18",
+    "Firefox ESR"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:github/internal",
+      "plugin:github/recommended"
+    ],
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "requireConfigFile": false
+    }
+  }
+}

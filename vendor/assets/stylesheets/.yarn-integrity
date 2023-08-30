@@ -1,0 +1,31 @@
+{
+  "systemParams": "darwin-arm64-93",
+  "modulesFolders": [
+    "vendor/assets/stylesheets"
+  ],
+  "flags": [],
+  "linkedModules": [],
+  "topLevelPatterns": [
+    "@primer/css@^21.0.8"
+  ],
+  "lockfileEntries": {
+    "@github/auto-check-element@^5.2.0": "https://registry.yarnpkg.com/@github/auto-check-element/-/auto-check-element-5.4.1.tgz#f2b56a26fa538448ec93a851c95f8dbe2cef6851",
+    "@github/auto-complete-element@^3.3.4": "https://registry.yarnpkg.com/@github/auto-complete-element/-/auto-complete-element-3.5.1.tgz#ea14029cf4a8cc322e6e2121d08c2f35b0d49cdc",
+    "@github/catalyst@^1.6.0": "https://registry.yarnpkg.com/@github/catalyst/-/catalyst-1.6.0.tgz#378734d1d2b6a85af169d7e66c1a2a604bf1e82c",
+    "@github/clipboard-copy-element@^1.1.2": "https://registry.yarnpkg.com/@github/clipboard-copy-element/-/clipboard-copy-element-1.2.1.tgz#93214f451eea982915f2d3d832371eade4eddcc2",
+    "@github/combobox-nav@^2.1.7": "https://registry.yarnpkg.com/@github/combobox-nav/-/combobox-nav-2.1.7.tgz#ae7d895291dee847ce6218063d2c286fcfb2235e",
+    "@github/details-menu-element@^1.0.12": "https://registry.yarnpkg.com/@github/details-menu-element/-/details-menu-element-1.0.13.tgz#d62263077b16bc7edc386e7b23f0ce41af1301b4",
+    "@github/image-crop-element@^5.0.0": "https://registry.yarnpkg.com/@github/image-crop-element/-/image-crop-element-5.0.0.tgz#6ae2c31f1e7dc355c41c3140554fb76ca7a71ef7",
+    "@github/include-fragment-element@^6.1.1": "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-6.3.0.tgz#c93d6252b14f7c190af4ccd9d61884185a612492",
+    "@github/mini-throttle@^2.1.0": "https://registry.yarnpkg.com/@github/mini-throttle/-/mini-throttle-2.1.1.tgz#c66db5c3b857aaf8c467de2528cd92f36f542ac5",
+    "@github/relative-time-element@^4.0.0": "https://registry.yarnpkg.com/@github/relative-time-element/-/relative-time-element-4.3.0.tgz#3cb90ffbbe9a82c7242bdd9d54f2d74d555547cf",
+    "@github/tab-container-element@^3.1.2": "https://registry.yarnpkg.com/@github/tab-container-element/-/tab-container-element-3.3.0.tgz#e7ab0e58dbd4ecca06fb1fca9b1612ac605b3ccb",
+    "@oddbird/popover-polyfill@^0.2.1": "https://registry.yarnpkg.com/@oddbird/popover-polyfill/-/popover-polyfill-0.2.2.tgz#2c7d180d7d2180c95681270542e5d2b721a38c90",
+    "@primer/behaviors@^1.3.4": "https://registry.yarnpkg.com/@primer/behaviors/-/behaviors-1.3.5.tgz#111eb550675577790cc01b14f3cf720332a2a046",
+    "@primer/css@^21.0.8": "https://registry.yarnpkg.com/@primer/css/-/css-21.0.8.tgz#b44f1e16af12a6b7efec898873a48ed9019c0283",
+    "@primer/primitives@^7.12.0": "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.12.0.tgz#82634bba41f465bc194cdf0ca6d5ed400f3f2c0d",
+    "@primer/view-components@^0.5.1": "https://registry.yarnpkg.com/@primer/view-components/-/view-components-0.5.1.tgz#5ea47ff3c76eb693af8cb1499e39f4545a112048"
+  },
+  "files": [],
+  "artifacts": {}
+}
