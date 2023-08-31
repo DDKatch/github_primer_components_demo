@@ -11,27 +11,7 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :source, style: "display: block" %>
-    <%= form.text_field :source %>
-  </div>
-
-  <div>
-    <%= form.label :destination, style: "display: block" %>
-    <%= form.text_field :destination %>
-  </div>
-
-  <div>
-    <%= form.label :source_loading_date, style: "display: block" %>
-    <%= form.datetime_field :source_loading_date %>
-  </div>
-
-  <div>
-    <%= form.label :destination_unloading_date, style: "display: block" %>
-    <%= form.datetime_field :destination_unloading_date %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= primer_form_with(model: proposal) do |f| %>
+    <%= render(Proposals::EditForm.new(f)) %>
+  <% end %>
 <% end %>
