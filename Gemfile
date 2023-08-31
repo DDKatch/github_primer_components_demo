@@ -76,3 +76,5 @@ gem "primer_view_components", "~> 0.8.0"
 gem "sassc-rails", "~> 2.1"
 
 gem "dartsass-rails", "~> 0.5.0"
+
+gem "pry", "~> 0.14.2"
