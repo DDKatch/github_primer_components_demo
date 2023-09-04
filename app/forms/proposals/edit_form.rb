@@ -1,7 +1,7 @@
 class Proposals::EditForm < ApplicationForm
   form do |edit_form|
-    source_loading_date = edit_form.builder.object.source_loading_date.strftime("%Y-%m-%d %H:%M:%S")
-    destination_unloading_date = edit_form.builder.object.destination_unloading_date.strftime("%Y-%m-%d %H:%M:%S")
+    source_loading_date = edit_form.builder.object.source_loading_date&.strftime("%Y-%m-%d %H:%M:%S")
+    destination_unloading_date = edit_form.builder.object.destination_unloading_date&.strftime("%Y-%m-%d %H:%M:%S")
 
     edit_form.text_field(name: :source, label: "Source")
     edit_form.text_field(name: :destination, label: "Destination")
