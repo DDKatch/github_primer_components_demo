@@ -1,18 +1,22 @@
-<% if notice.present? %>
-  <%= render(Primer::Alpha::Banner.new(dismiss_scheme: :remove, scheme: :success)) do |component| %>
-    <%= notice %>
+<%= render(Primer::Alpha::Layout.new) do |component| %>
+  <% component.with_main(width: :md, p: 6) do %>
+    <% if notice.present? %>
+      <%= render(Primer::Alpha::Banner.new(dismiss_scheme: :remove, scheme: :success)) do |component| %>
+        <%= notice %>
+      <% end %>
+    <% end %>
+
+    <h1>Proposals</h1>
+
+    <div id="proposals">
+      <% @proposals.each do |proposal| %>
+        <%= render proposal %>
+        <p>
+          <%= link_to "Show this proposal", proposal %>
+        </p>
+      <% end %>
+    </div>
+    <%= link_to "New proposal", new_proposal_path %>
   <% end %>
+  <% component.with_sidebar %>
 <% end %>
-
-<h1>Proposals</h1>
-
-<div id="proposals">
-  <% @proposals.each do |proposal| %>
-    <%= render proposal %>
-    <p>
-      <%= link_to "Show this proposal", proposal %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New proposal", new_proposal_path %>

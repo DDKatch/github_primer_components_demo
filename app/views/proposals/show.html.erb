@@ -1,22 +1,29 @@
-<% if notice.present? %>
-  <%= render(Primer::Alpha::Banner.new(dismiss_scheme: :remove, scheme: :success)) do |component| %>
-    <%= notice %>
+<%= render(Primer::Alpha::Layout.new) do |component| %>
+  <% component.with_main(width: :md, p: 6) do %>
+
+    <% if notice.present? %>
+      <%= render(Primer::Alpha::Banner.new(dismiss_scheme: :remove, scheme: :success)) do |component| %>
+        <%= notice %>
+      <% end %>
+    <% end %>
+
+    <%= render @proposal %>
+
+    <div>
+      <%= link_to "Edit this proposal", edit_proposal_path(@proposal) %> |
+      <%= link_to "Back to proposals", proposals_path %>
+
+      <% button = Custom::Button.new(
+        scheme: :default,
+        size: :medium,
+        block: false,
+        align_content: :center,
+        tag: :button,
+        disabled: false
+      ) %>
+      <%= button_to "Destroy this proposal", @proposal, method: :delete, class: button.css_classes %>
+    </div>
+
   <% end %>
+  <% component.with_sidebar %>
 <% end %>
-
-<%= render @proposal %>
-
-<div>
-  <%= link_to "Edit this proposal", edit_proposal_path(@proposal) %> |
-  <%= link_to "Back to proposals", proposals_path %>
-
-  <% button = Custom::Button.new(
-    scheme: :default,
-    size: :medium,
-    block: false,
-    align_content: :center,
-    tag: :button,
-    disabled: false
-  ) %>
-  <%= button_to "Destroy this proposal", @proposal, method: :delete, class: button.css_classes %>
-</div>
