@@ -18,7 +18,7 @@ class Proposals::EditForm < ApplicationForm
       value: destination_unloading_date
     )
 
-    edit_form.submit(name: "Update proposal", label: "label")
+    edit_form.submit(name: "Update proposal", label: "Update proposal")
   end
 end
 
