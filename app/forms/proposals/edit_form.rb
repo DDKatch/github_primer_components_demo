@@ -16,10 +16,10 @@ class Proposals::EditForm < ImmediateValidationForm
   end
 
   form do |validation_form|
-    source_loading_date = validation_form.builder.object.source_loading_date&.strftime("%Y-%m-%d %H:%M:%S")
-    destination_unloading_date = validation_form.builder.object.destination_unloading_date&.strftime("%Y-%m-%d %H:%M:%S")
-
-
+    source_loading_date = validation_form.builder.object
+      .source_loading_date&.strftime("%Y-%m-%d %H:%M:%S")
+    destination_unloading_date = validation_form.builder.object
+      .destination_unloading_date&.strftime("%Y-%m-%d %H:%M:%S")
 
     validation_form.text_field(
       validation_message: validations[:source].call && messages[:source],
@@ -50,7 +50,6 @@ class Proposals::EditForm < ImmediateValidationForm
     validation_form.submit(
       name: "Update proposal",
       label: "Update proposal",
-      disabled: validations.reduce(false) { |v, res| res || v.call }
     )
   end
 end

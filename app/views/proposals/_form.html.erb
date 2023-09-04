@@ -1,14 +1,15 @@
 <%= form_with(model: proposal) do |form| %>
   <% if proposal.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(proposal.errors.count, "error") %> prohibited this proposal from being saved:</h2>
+    <%= render(Primer::Alpha::Banner.new(scheme: :danger)) do %>
+      <% errors_count_msg = pluralize(proposal.errors.count, "error")%>
+      <h2><%= "#{errors_count_msg} prohibited this proposal from being saved:" %></h2>
 
       <ul>
         <% proposal.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
-    </div>
+    <% end %>
   <% end %>
 
   <%= primer_form_with(model: proposal) do |f| %>

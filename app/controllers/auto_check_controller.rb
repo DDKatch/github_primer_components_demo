@@ -5,17 +5,17 @@ class AutoCheckController < ApplicationController
     destination = params[:value]
     case destination
     when ->(x) { x&.empty? } 
-      return render(
+      render(
         status: :unprocessable_entity, 
         plain: "Cannot be empty"
       )
     when ->(x) { x&.length < 3 } 
-      return render(
+      render(
         status: :unprocessable_entity, 
         plain: "Has to be longer than 3 symbols"
       )
     when ->(x) { x&.present? }
-      return render(
+      render(
         status: :ok, 
         plain: "thanks"
       )
