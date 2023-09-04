@@ -1,4 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <%= render(Primer::Alpha::Banner.new(dismiss_scheme: :remove, scheme: :success)) do |component| %>
+    <%= notice %>
+  <% end %>
+<% end %>
 
 <%= render @proposal %>
 
