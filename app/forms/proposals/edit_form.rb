@@ -1,25 +1,56 @@
-class Proposals::EditForm < ApplicationForm
-  form do |edit_form|
-    source_loading_date = edit_form.builder.object.source_loading_date&.strftime("%Y-%m-%d %H:%M:%S")
-    destination_unloading_date = edit_form.builder.object.destination_unloading_date&.strftime("%Y-%m-%d %H:%M:%S")
+class Proposals::EditForm < ImmediateValidationForm
+  include Rails.application.routes.url_helpers
 
-    edit_form.text_field(name: :source, label: "Source")
-    edit_form.text_field(name: :destination, label: "Destination")
-    edit_form.text_field(
+  def validations
+    {
+      source: -> { @builder.object.source&.empty? },
+      destination: -> { @builder.object.destination&.empty? }
+    }
+  end
+
+  def messages
+    {
+      source: "Cannot be empty",
+      destination: "Cannot be empty"
+    }
+  end
+
+  form do |validation_form|
+    source_loading_date = validation_form.builder.object.source_loading_date&.strftime("%Y-%m-%d %H:%M:%S")
+    destination_unloading_date = validation_form.builder.object.destination_unloading_date&.strftime("%Y-%m-%d %H:%M:%S")
+
+
+
+    validation_form.text_field(
+      validation_message: validations[:source].call && messages[:source],
+      name: :source,
+      label: "Source",
+      required: true
+    )
+    validation_form.text_field(
+      validation_message: validations[:destination].call && messages[:destination],
+      auto_check_src: proposal_form_validate_destination_path,
+      name: :destination,
+      label: "Destination",
+      required: true
+    )
+    validation_form.text_field(
       name: :source_loading_date,
       type: "datetime-local",
       label: "Source loading date",
       value: source_loading_date
     )
-    edit_form.text_field(
+    validation_form.text_field(
       name: :destination_unloading_date,
       type: "datetime-local",
       label: "Destination unloading date",
       value: destination_unloading_date
     )
 
-    edit_form.submit(name: "Update proposal", label: "Update proposal")
+    validation_form.submit(
+      name: "Update proposal",
+      label: "Update proposal",
+      disabled: validations.reduce(false) { |v, res| res || v.call }
+    )
   end
 end
-
-

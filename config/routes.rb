@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  post "/proposal_form_validate/destination", to: "auto_check#validate_destination", as: :proposal_form_validate_destination
 end
