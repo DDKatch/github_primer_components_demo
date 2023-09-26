@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveSupport.on_load(:view_component) do
   # Extend your preview controller to support authentication and other
   # application-specific stuff

@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class ProposalsControllerTest < ActionDispatch::IntegrationTest
-  setup do
+  before do
     @proposal = proposals(:one)
   end
 
@@ -17,7 +19,9 @@ class ProposalsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create proposal" do
     assert_difference("Proposal.count") do
-      post proposals_url, params: { proposal: { destination: @proposal.destination, destination_unloading_date: @proposal.destination_unloading_date, source: @proposal.source, source_loading_date: @proposal.source_loading_date } }
+      post proposals_url,
+        params: {proposal: {destination: @proposal.destination,
+                            destination_unloading_date: @proposal.destination_unloading_date, source: @proposal.source, source_loading_date: @proposal.source_loading_date}}
     end
 
     assert_redirected_to proposal_url(Proposal.last)
@@ -34,7 +38,9 @@ class ProposalsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update proposal" do
-    patch proposal_url(@proposal), params: { proposal: { destination: @proposal.destination, destination_unloading_date: @proposal.destination_unloading_date, source: @proposal.source, source_loading_date: @proposal.source_loading_date } }
+    patch proposal_url(@proposal),
+      params: {proposal: {destination: @proposal.destination,
+                          destination_unloading_date: @proposal.destination_unloading_date, source: @proposal.source, source_loading_date: @proposal.source_loading_date}}
     assert_redirected_to proposal_url(@proposal)
   end
 

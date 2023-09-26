@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -8,8 +10,8 @@ Bundler.require(*Rails.groups)
 
 module Kek
   class Application < Rails::Application
-    config.autoload_paths << Rails.root.join("app", "views", "components")
-    config.view_component.preview_paths << Rails.root.join("app", "views", "components")
+    config.autoload_paths << Rails.root.join('app', 'views', 'components')
+    config.view_component.preview_paths << Rails.root.join('app', 'views', 'components')
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
@@ -23,5 +25,5 @@ module Kek
   end
 end
 
-require "view_component"
-require "primer/view_components/engine"
+require 'view_component'
+require 'primer/view_components/engine'

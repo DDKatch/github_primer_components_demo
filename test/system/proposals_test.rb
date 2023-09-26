@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require "application_system_test_case"
 
 class ProposalsTest < ApplicationSystemTestCase
-  setup do
+  before do
     @proposal = proposals(:one)
   end
 
@@ -9,6 +11,8 @@ class ProposalsTest < ApplicationSystemTestCase
     visit proposals_url
     assert_selector "h1", text: "Proposals"
   end
+
+  test "should"
 
   test "should create proposal" do
     visit proposals_url

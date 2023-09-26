@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ProposalsController < ApplicationController
-  before_action :set_proposal, only: %i[ show edit update destroy ]
+  before_action :set_proposal, only: %i[show edit update destroy]
 
   # GET /proposals or /proposals.json
   def index
@@ -17,6 +19,10 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/1/edit
   def edit
+  end
+
+  def adfasdfasdalksjdfasdfjkajsdhfjkhasdkfhasjdhfajfasjdfkjsdkjfksjdkfjakdsjfkajsdkfjaksdjfalsdkfjkasjdfkasjdflkajsdkfj
+    Rails.logger.debug "askdjflaksjdfkjasdkfjlajsdflkjaskdlfjajsdfjaslkdjf;lkajdlkfjaskldjfklajsdlfj;akjdf;lkajsdklfja;sdkfjlkasdjf;asjd;flkjas;dlkfj;alsdjf;kasjdf;kajs;dkfjaskdfj"
   end
 
   # POST /proposals or /proposals.json
@@ -58,13 +64,14 @@ class ProposalsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_proposal
-      @proposal = Proposal.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def proposal_params
-      params.require(:proposal).permit(:source, :destination, :source_loading_date, :destination_unloading_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_proposal
+    @proposal = Proposal.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def proposal_params
+    params.require(:proposal).permit(:source, :destination, :source_loading_date, :destination_unloading_date)
+  end
 end
