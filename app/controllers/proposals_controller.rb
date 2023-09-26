@@ -21,10 +21,6 @@ class ProposalsController < ApplicationController
   def edit
   end
 
-  def adfasdfasdalksjdfasdfjkajsdhfjkhasdkfhasjdhfajfasjdfkjsdkjfksjdkfjakdsjfkajsdkfjaksdjfalsdkfjkasjdfkasjdflkajsdkfj
-    Rails.logger.debug "askdjflaksjdfkjasdkfjlajsdflkjaskdlfjajsdfjaslkdjf;lkajdlkfjaskldjfklajsdlfj;akjdf;lkajsdklfja;sdkfjlkasdjf;asjd;flkjas;dlkfj;alsdjf;kasjdf;kajs;dkfjaskdfj"
-  end
-
   # POST /proposals or /proposals.json
   def create
     @proposal = Proposal.new(proposal_params)
